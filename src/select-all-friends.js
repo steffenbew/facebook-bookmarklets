@@ -6,7 +6,9 @@ function setCheckboxes(el, isChecked) {
   var checkboxes = el.querySelectorAll('input[type=checkbox]'), index;
   
   for (index = 0; index < checkboxes.length; index++) {
-    checkboxes[index].checked = isChecked;
+    if ( ! checkboxes[index].disabled) {
+      checkboxes[index].checked = isChecked;
+    }
   }
 }
 
