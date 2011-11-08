@@ -2,12 +2,12 @@
 var container = document.querySelectorAll('.fbProfileBrowserResult')[1];
 
 // set state of all checkboxes in defined element
-function setCheckboxes(el, isChecked) {
+function clickCheckboxes(el) {
   var checkboxes = el.querySelectorAll('input[type=checkbox]'), index;
   
   for (index = 0; index < checkboxes.length; index++) {
     if ( ! checkboxes[index].disabled) {
-      checkboxes[index].checked = isChecked;
+      checkboxes[index].click();
     }
   }
 }
@@ -22,7 +22,7 @@ function setCheckboxes(el, isChecked) {
       scrollDown(el, el.scrollTop);
     } else {
       // set state of all checkboxes when all profiles are loaded
-      setCheckboxes(el, true);
+      clickCheckboxes(el);
     }
   }, 100);
 }(container, 0));
